@@ -1,3 +1,4 @@
+import React from 'react';
 import { Box } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
@@ -18,7 +19,6 @@ const App = () => {
         <Route path="/exercise/:id" element={<ExerciseDetail />} />
       </Routes>
       <Footer />
-      {/* hjg */}
     </Box>
   );
 };
