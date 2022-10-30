@@ -11,7 +11,7 @@ const SearchExercises = ({ bodyParts, setBodyParts, setExercises }) => {
   useEffect(() => {
     const fetchExercisesData = async () => {
       // prettier-ignore
-      const bodyPartsData = ['back', 'cardio', 'chest', 'lower arms', 'lower legs', 'neck', 'shoulders', 'upper arms', 'upper legs', 'waist']
+      const bodyPartsData = ['back', 'cardio', 'chest', 'lower arms', 'lower legs', 'neck', 'shoulders', 'upper arms', 'upper legs', 'waist'];
       // const bodyPartsData = await fetchData(
       //   'https://exercisedb.p.rapidapi.com/exercises/bodyPartList',
       //   exerciseOptions
@@ -96,8 +96,8 @@ const SearchExercises = ({ bodyParts, setBodyParts, setExercises }) => {
       <Box sx={{ position: 'relative', width: '100%', p: '20px' }}>
         <HorizontalScrollbar
           data={bodyParts}
-          setBodyPart={setBodyParts}
-          bodyPart={bodyParts}
+          setBodyParts={setBodyParts}
+          bodyParts={bodyParts}
         />
       </Box>
     </Stack>
