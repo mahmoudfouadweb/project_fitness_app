@@ -1,13 +1,21 @@
 body {
+<<<<<<< HEAD
   font-family: 'Josefin Sans';
   background-color: #FFFAFB;
+=======
+  font-family: "Josefin Sans";
+  background-color: #fffafb;
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4
 }
 
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4
 }
 
 ::-webkit-scrollbar {
@@ -23,7 +31,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   color: #FF2625;
+=======
+  color: #ff2625;
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4
   font-size: 25px;
   border-radius: 4px;
   position: absolute;
@@ -60,14 +72,21 @@ body {
   width: 700px;
   height: 900px;
   margin-top: -330px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4
 }
 
 .exercise-card {
   width: 400px;
   height: 445px;
   background: #fff;
+<<<<<<< HEAD
   border-top: 4px solid #FF2625;
+=======
+  border-top: 4px solid #ff2625;
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4
   border-bottom-left-radius: 20px;
   text-decoration: none;
   display: flex;
@@ -93,8 +112,13 @@ body {
 }
 
 .search-btn:hover {
+<<<<<<< HEAD
   color: #FF2625 !important;
   border: 1px solid #FF2625 !important;
+=======
+  color: #ff2625 !important;
+  border: 1px solid #ff2625 !important;
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4
 }
 
 .exercise-video {
@@ -104,15 +128,29 @@ body {
   width: 387px;
   height: 381px;
   text-decoration: none;
+<<<<<<< HEAD
 }
 
 @media screen and (max-width:1200px) {
+=======
+  transition: all 0.4s ease-out;
+}
+
+.exercise-video:hover {
+  scale: 1.11;
+}
+
+@media screen and (max-width: 1200px) {
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4
   .detail-image {
     width: 300px;
     height: 300px;
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4
   .react-horizontal-scrolling-menu--scroll-container {
     width: 500px;
   }
@@ -134,6 +172,7 @@ body {
     width: 320px;
     height: 300px;
   }
+<<<<<<< HEAD
 
 }
 
@@ -142,3 +181,12 @@ body {
     width: 280px;
   }
 }
+=======
+}
+
+@media screen and (max-width: 400px) {
+  .exercise-card {
+    width: 280px;
+  }
+}
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4

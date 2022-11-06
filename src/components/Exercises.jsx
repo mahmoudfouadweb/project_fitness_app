@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Box, Pagination, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
@@ -6,6 +7,16 @@ import { exerciseOptions, fetchData } from '../utils/fetchData';
 import ExerciseCard from './ExerciseCard';
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
+=======
+import { Box, Pagination, Stack, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { allExercises } from "../utils/allExercises";
+import { exerciseOptions, fetchData } from "../utils/fetchData";
+import ExerciseCard from "./ExerciseCard";
+
+const Exercises = ({ exercises, setExercises, bodyPart, scrollToRef }) => {
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(9);
 
@@ -13,7 +24,11 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     const fetchExercisesData = async () => {
       let exerciseData = [];
       // console.log(bodyPart);
+<<<<<<< HEAD
       if (bodyPart === 'all') {
+=======
+      if (bodyPart === "all") {
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4
         // exerciseData = await fetchData(
         //   'https://exercisedb.p.rapidapi.com/exercises',
         //   exerciseOptions
@@ -25,7 +40,11 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         //   exerciseOptions
         // );
         exerciseData = allExercises.filter(
+<<<<<<< HEAD
           exercise => exercise.bodyPart == bodyPart
+=======
+          (exercise) => exercise.bodyPart == bodyPart
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4
         );
       }
       setExercises(exerciseData);
@@ -46,6 +65,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const paginate = (e, value) => {
     setCurrentPage(value);
 
+<<<<<<< HEAD
     window.scrollTo({ top: 1800, behavior: 'smooth' });
   };
 
@@ -62,6 +82,24 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
           gap: { lg: '110px', xs: '50px' },
           flexWrap: 'wrap',
           justifyContent: 'center',
+=======
+    window.scrollTo({ top: 1800, behavior: "smooth" });
+  };
+
+  // if (!exercises.length) return <Loader />; id="exercises"
+
+  return (
+    <Box ref={scrollToRef} sx={{ mt: { lg: "109px" } }} mt="50px" p="20px">
+      <Typography variant="h3" sx={{ mb: "46px" }}>
+        Showing Result
+      </Typography>
+      <Stack
+        direction={"row"}
+        sx={{
+          gap: { lg: "110px", xs: "50px" },
+          flexWrap: "wrap",
+          justifyContent: "center",
+>>>>>>> 60b22894082861f3015e0e36346c1d18f4e0b1a4
         }}
       >
         {currentExercises.map((exercise, idx) => (
