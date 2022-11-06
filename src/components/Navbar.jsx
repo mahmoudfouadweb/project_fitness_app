@@ -1,58 +1,71 @@
-import { Stack } from '@mui/material';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Stack } from "@mui/material";
+import React from "react";
+import { Link } from "react-router-dom";
 
-import Logo from '../assets/images/Logo.png';
+import Logo from "../assets/images/Logo.png";
 
-const Navbar = () => {
+const Navbar = ({ scrollToRef, isHidden, setIsHidden }) => {
   return (
     <Stack
-      direction={'row'}
+      direction={"row"}
       justifyContent="space-around"
       sx={{
         gap: {
-          sm: '122px',
-          xs: '40px',
+          sm: "122px",
+          xs: "40px",
         },
         mt: {
-          sm: '32px',
-          xs: '20px',
+          sm: "32px",
+          xs: "20px",
         },
-        justifyContent: 'none',
-        px: '20px',
+        justifyContent: "none",
+        px: "20px",
       }}
     >
-      <Link to="/">
+      <Link to="/" onClick={() => setIsHidden(true)}>
         <img
           src={Logo}
           alt="logo"
-          style={{ width: '48px', height: '48px', margin: '0 20px' }}
+          style={{ width: "48px", height: "48px", margin: "0 20px" }}
         />
       </Link>
 
       <Stack
         direction="row"
-        gap={'40px'}
+        gap={"40px"}
         fontSize="24px"
-        alignItems={'flex-end'}
+        alignItems={"flex-end"}
       >
         <Link
-          to={'/'}
+          to={"/"}
           style={{
-            textDecoration: 'none',
-            color: '#3A1212',
-            borderBottom: '3px solid #ff2625',
+            textDecoration: "none",
+            color: "#3A1212",
+            borderBottom: "3px solid #ff2625",
           }}
         >
-          {' '}
-          Home{' '}
+          {" "}
+          Home{" "}
         </Link>
-        <a
-          href="#exercise"
-          style={{ textDecoration: 'none', color: '#3A1212' }}
-        >
-          Exercise
-        </a>
+        {isHidden ? (
+          <a
+            onClick={() =>
+              scrollToRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "center",
+              })
+            }
+            href="#exercises"
+            style={{
+              textDecoration: "none",
+              color: "#3A1212",
+              scrollBehavior: "smooth",
+            }}
+          >
+            Exercise
+          </a>
+        ) : null}
       </Stack>
     </Stack>
   );

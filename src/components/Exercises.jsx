@@ -1,11 +1,11 @@
-import { Box, Pagination, Stack, Typography } from '@mui/material';
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { allExercises } from '../utils/allExercises';
-import { exerciseOptions, fetchData } from '../utils/fetchData';
-import ExerciseCard from './ExerciseCard';
+import { Box, Pagination, Stack, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { allExercises } from "../utils/allExercises";
+import { exerciseOptions, fetchData } from "../utils/fetchData";
+import ExerciseCard from "./ExerciseCard";
 
-const Exercises = ({ exercises, setExercises, bodyPart }) => {
+const Exercises = ({ exercises, setExercises, bodyPart, scrollToRef }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(9);
 
@@ -13,7 +13,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     const fetchExercisesData = async () => {
       let exerciseData = [];
       // console.log(bodyPart);
-      if (bodyPart === 'all') {
+      if (bodyPart === "all") {
         // exerciseData = await fetchData(
         //   'https://exercisedb.p.rapidapi.com/exercises',
         //   exerciseOptions
@@ -25,7 +25,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         //   exerciseOptions
         // );
         exerciseData = allExercises.filter(
-          exercise => exercise.bodyPart == bodyPart
+          (exercise) => exercise.bodyPart == bodyPart
         );
       }
       setExercises(exerciseData);
@@ -46,22 +46,22 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const paginate = (e, value) => {
     setCurrentPage(value);
 
-    window.scrollTo({ top: 1800, behavior: 'smooth' });
+    window.scrollTo({ top: 1800, behavior: "smooth" });
   };
 
-  // if (!exercises.length) return <Loader />;
+  // if (!exercises.length) return <Loader />; id="exercises"
 
   return (
-    <Box id="exercises" sx={{ mt: { lg: '109px' } }} mt="50px" p="20px">
-      <Typography variant="h3" sx={{ mb: '46px' }}>
+    <Box ref={scrollToRef} sx={{ mt: { lg: "109px" } }} mt="50px" p="20px">
+      <Typography variant="h3" sx={{ mb: "46px" }}>
         Showing Result
       </Typography>
       <Stack
-        direction={'row'}
+        direction={"row"}
         sx={{
-          gap: { lg: '110px', xs: '50px' },
-          flexWrap: 'wrap',
-          justifyContent: 'center',
+          gap: { lg: "110px", xs: "50px" },
+          flexWrap: "wrap",
+          justifyContent: "center",
         }}
       >
         {currentExercises.map((exercise, idx) => (
